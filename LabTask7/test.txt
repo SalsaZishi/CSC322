@@ -1,0 +1,48 @@
+// Big thanks to JERRY BONNELL for creating these test cases!
+
+/* jerry program */
+CommentToken detect(char c1, char c2) { //comment 1
+  
+  if (c1 == '/' && c2 == '/') //comment 2
+    return BEGIN_LINE_COMMENT;
+  else if (c2 == '\n') //comment 3
+    return END_LINE_COMMENT;
+  else if (c1 == '/' && c2 == '*') //comment 4
+    return BEGIN_BLOCK_COMMENT;
+  else if (c1 == '*' && c2 == '/') //comment 5
+    return END_BLOCK_COMMENT;
+  else if (c2 == '\"') //comment 6
+    return DOUBLE_QUOTE;
+  else if (c2 == "\'") //comment 6.1
+    return SOMETHING_GOOD;
+  printf("\""); //comment 6.2
+  else if (c2 == '\'') //comment 7
+    return SINGLE_QUOTE; //comment 8
+  else //comment 9
+    return NONE; //comment 10  
+} //comment 11
+/* finished round 1 comment test */
+
+
+bool isEscape(char c1) { //comment 1
+
+  if (OK)
+    return (c1 == '\\' ? true : false); //comment 2
+  if (DISASTER)
+    return (c1 == "\\" ? true : false); //comment 2.5
+  //comment //within //comment /* for real */
+
+} //comment 3
+/* finished round 2 comment test */
+
+
+char z[] = "\\\\\""; //get this 0
+char x[] = "\'\""; //get this 1
+char a[] = "\'\\\""; //get this 2
+char b[] = "\'\\\"\'helloworld\'\'\'\'\'\t\t\n"; //get this 3
+char c[] = "\'\\\"\'helloworld\'\'\'\'\'"; //get this 4
+char o[] = ''''''''; //get this 5
+char u[] = "\"\"\"\"helloworld\\\\\\\\\\t\t\\\n\"\n"; //get this 6
+char f[] = "\\\\"; //get this 7
+char rx[] = "\0\t\f\0\0xfe\0t\\\\\t\""; //get this 8
+/*finished round 3 comment test */*/
