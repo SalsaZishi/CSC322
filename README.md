@@ -1,8 +1,7 @@
 # CSC322: C Programming and Unix
 Instructor: Dr. Stefan Wuchty, Fall 2015
 
-This class will introduce the student to using 
-commands on the terminal, creating shellscripts, 
+This class will introduce the student to using commands on the terminal, creating shellscripts, 
 and basic C functions and libraries.
 
 CSC120 and CSC220 focused on object oriented 
