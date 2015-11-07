@@ -1,5 +1,4 @@
 
-
 This program already has a macro that determines whether or not an 
 unsigned int is odd by examining the least significant binary digit. 
 It is missing the macros for determining if the Nth least significant bit 
@@ -33,3 +32,4 @@ Remarks:
     You need to submit one .c file with the corresponding C code using submit2 
     (Please DO NOT submit compiled executables)! 
     Furthermore, the C code needs to compile without any warnings (otherwise Kyle will not consider it)! 
+    
