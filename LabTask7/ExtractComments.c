@@ -1,3 +1,22 @@
+//----------------------------------------------------------------------------------
+// Zishi Wu
+// October 30, 2015
+// ExtractComments.c
+//----------------------------------------------------------------------------------
+/* This program extracts valid comments from a file. I am hesitant to say 
+ * "ALL" valid comments. There might be a clever invalid comment that my 
+ * program will accidently catch. If you find such an exceptional case, be
+ * sure to post of comment of that case. Always room for improving code!
+ 
+ * For a good file to test your own program, try using the test.txt file
+ * which is also located in the LabTask 7 folder. Compile your program
+ * into an executable. Then redirect the test.txt file as input to the 
+ * executable like so:
+ * 			./executable < test.txt
+ * 
+ * This program was quite difficult and took 10 hours, so good luck!
+ */ 
+//----------------------------------------------------------------------------------
 #include <stdio.h>
 #include <stdlib.h>
 //-----------------------------------------------------------------------------
