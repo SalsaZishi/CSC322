@@ -1,6 +1,6 @@
 //-----------------------------------------------------------------------------
 // Zishi Wu
-// October 4, 2015
+// October 1, 2015
 // Scuba.c
 //-----------------------------------------------------------------------------
 /* This program calculates the balance of oxygen versus nitrogen that a 
