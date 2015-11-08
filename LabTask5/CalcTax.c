@@ -1,6 +1,6 @@
 //-----------------------------------------------------------------------------
 // Zishi Wu
-// October 4, 2015
+// October 18, 2015
 // CalcTax.c
 //-----------------------------------------------------------------------------
 /* This is a simplified tax calculator. The user inputs positive numbers 
