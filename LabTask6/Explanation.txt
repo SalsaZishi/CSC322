@@ -24,14 +24,26 @@ Converted to base 10, this is (2^6)+(2^5)+(2^4) = 64 + 32 + 16 = 112
 
 After doing some math, I found that 2^(E+1) = 2^(6+1) = 128 and 2^(S) = 2^4 = 16
 Furthermore, 2^(E+1) - 2^(S) = 128 - 16 = 112 (mask value)
-So ( X & mask_value ) compares the two values to see if all digits from S to E are on.
+So ( X & Mask ) compares the two values to see if all digits from S to E are on.
 
-30 in binary: 0 0 0 0 1 1 1 1 0 
-Mask:         0 0 1 1 1 0 0 0 0
-Result:       0 0 0 0 1 0 0 0 0
+Remember: 
+0 & 0 = 0
+1 & 0 = 0
+1 & 1 = 1
+
+30 in binary:       0 0 0 0 1 1 1 1 0 
+Mask:               0 0 1 1 1 0 0 0 0
+Result (X & Mask):  0 0 0 0 1 0 0 0 0 
 
 We want the result to be zero, which would indicate that not all bits from the 
 starting digit (S = 4) to the ending digit (E = 6) are on. However, the problem
-is that the result of the comparison returns a value that is not completely 
+is that the result of the comparison returns a value that is not zero. The 5th digit
+is a 1, which gives a value of 2^4 = 16. This non-zero result falsely suggests that 
+the bits from S to E are all on, when in fact they are not. So what do we do?
+
+Solution: check if the resulting value of the comparison is equal to the value of 
+the mask. The mask is a value such that all bits from S to E are on. If all the bits 
+are indeed on in the original value X, then the result should equal the mask. In 
+logic syntax: (X & Mask) == (Mask)
 
 #define ALLON(X,S,E) ( ((X) & ( (1<<(E+1))-(1<<(S)) )) == ( (1<<(E+1))-(1<<(S)) ) )
