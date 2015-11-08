@@ -1,7 +1,7 @@
 //-----------------------------------------------------------------------------
 // Zishi Wu
 // October 4, 2015
-// CalcTax.c
+// Kangaroos.c
 //-----------------------------------------------------------------------------
 /* This program calculates the expected number of kangaroo casualties on an 
  * Australian road, given the number of kangaroos, the length of the road,
