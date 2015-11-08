@@ -22,6 +22,7 @@
 // tax ceiling
 #define MAX_TAX 50000 
 //---------------------------------------------------------------------------------
+// METHODS DECLARED
 void IncomeAndDeduction(float *income, float *deduction);
 float computeTaxable(float income, float deduction);
 char taxGroup(float taxable);
@@ -83,9 +84,7 @@ char taxGroup (float taxable) {
 }
 //-----------------------------------------------------------------------------------
 /* Returns the amount of tax that user must pay, depending on their tax group and 
- * taxable income. The maximum amount of taxes is capped at $50,000. 
- * Switch statement could be implemented instead of a series of if/else statements
- * to save time of writing longer conditional statements.
+ * taxable income. The maximum amount of taxes is capped at $50,000.
  */
 float computeTax (char group, float taxable){
 	
@@ -116,11 +115,11 @@ float computeTax (char group, float taxable){
 }
 //-----------------------------------------------------------------------------------
 void display(float income, float deduction, float taxable, char group, float tax) {
-	printf("Income = $%-20.2f\n", income);
-	printf("%Deduction = $%-20.2f\n", deduction);
-	printf("Taxable Income = $%-20.2f\n", taxable);
-	printf("Tax Group = %c\n", group);
-	printf("Tax Owed = $%-20.2f\n", tax);
+	printf("Income         = $%14.2f\n", income);
+	printf("Deduction      = $%14.2f\n", deduction);
+	printf("Taxable Income = $%14.2f\n", taxable);
+	printf("Tax Group      = %c\n", group);
+	printf("Tax Owed       = $%14.2f\n", tax);
 }
 //-----------------------------------------------------------------------------------
 int main(void){
@@ -130,10 +129,9 @@ int main(void){
     float taxable, tax;
     char group;
 	
-    // Get income and deduction
+    // get income and deduction
 	income = deduction = 0.0;
     IncomeAndDeduction(&income, &deduction);
-	// printf("income: %.1f\n", income);
 
 	// get taxable income
 	taxable = computeTaxable(income, deduction);
