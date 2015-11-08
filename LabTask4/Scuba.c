@@ -3,6 +3,12 @@
 // October 4, 2015
 // Scuba.c
 //-----------------------------------------------------------------------------
+/* This program calculates the balance of oxygen versus nitrogen that a 
+ * scuba diver's tank should have. An oxygen partial pressure of 1.4 or 
+ * greater will result in the program returning a character after 'N',
+ * meaning that the mixture of oxygen in the diver's tank is too strong.
+ */
+//-----------------------------------------------------------------------------
 #include <stdio.h>
 #include <stdlib.h> 
 
