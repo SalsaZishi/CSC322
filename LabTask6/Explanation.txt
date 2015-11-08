@@ -46,4 +46,8 @@ the mask. The mask is a value such that all bits from S to E are on. If all the 
 are indeed on in the original value X, then the result should equal the mask. In 
 logic syntax: (X & Mask) == (Mask)
 
+Now comes the tedious part of writing the syntax to shift the bits to get the mask
+value. Tedious because you have to account for so many parenthesis. But once you 
+complete this, it's a great feeling. Congrats! You just solved a math and logic puzzle!
+
 #define ALLON(X,S,E) ( ((X) & ( (1<<(E+1))-(1<<(S)) )) == ( (1<<(E+1))-(1<<(S)) ) )
