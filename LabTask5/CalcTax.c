@@ -1,4 +1,14 @@
-//----Tax Calculator
+//-----------------------------------------------------------------------------
+// Zishi Wu
+// October 4, 2015
+// CalcTax.c
+//-----------------------------------------------------------------------------
+/* This is a simplified tax calculator. The user inputs positive numbers 
+ * representing income and negative numbers representing deductions. These
+ * are summed and then evaluated to assess the user's income bracket, which
+ * will then determine what rate their income will be taxed. The results 
+ * of these computations are then printed.
+ */
 //-----------------------------------------------------------------------------
 #include <stdio.h>
 #include <stdlib.h>
