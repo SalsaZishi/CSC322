@@ -1,7 +1,12 @@
 //-----------------------------------------------------------------------------
 // Zishi Wu
 // October 4, 2015
-// Kangaroos.c
+// CalcTax.c
+//-----------------------------------------------------------------------------
+/* This program calculates the expected number of kangaroo casualties on an 
+ * Australian road, given the number of kangaroos, the length of the road,
+ * and the length of the side of the land (assumed to be a square).
+ */
 //-----------------------------------------------------------------------------
 #include <stdio.h>
 #include <stdlib.h> 
