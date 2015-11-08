@@ -1,6 +1,6 @@
 //-----------------------------------------------------------------------------
 // Zishi Wu
-// October 4, 2015
+// October 1, 2015
 // Kangaroos.c
 //-----------------------------------------------------------------------------
 /* This program calculates the expected number of kangaroo casualties on an 
