@@ -1,5 +1,5 @@
 
-
+Thoughts: If only filing taxes were so easy!
 Tax time! Let's assume that we have a much simpler tax code (than the IRS currently has), so that we can calculate taxes easily:
 
     The tax payer is repeatedly prompted to enter either an amount of income (a positive value) or an amount of deduction 
@@ -92,3 +92,4 @@ The implementation must follow the design. Remarks:
     The assignment is due next Friday, Oct. 16th, 11:59PM.
     You need to submit one .c file with the corresponding C code using submit2 (Please DO NOT submit compiled executables)! 
     Furthermore, the C code needs to compile without any warnings (otherwise Kyle will not consider it)! 
+    
