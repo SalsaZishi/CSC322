@@ -48,14 +48,14 @@ void IncomeAndDeduction(float *income, float *deduction){
 	float nextAmount = 1.0; 
   
 	while (nextAmount != 0.0) {
-    	printf("Enter next amount: ");
+    printf("Enter next amount: ");
 	 	scanf("%f", &nextAmount);
-    	if (nextAmount > 0) {
-      		*income += nextAmount;
+      if (nextAmount > 0) {
+    	  *income += nextAmount;
     	} else {
-      		*deduction += abs(nextAmount);
+        *deduction += abs(nextAmount);
     	}
-  	}
+  }
 }
 //----------------------------------------------------------------------------------
 /* Returns the amount of the taxable income, which equals income minus deduction
@@ -67,7 +67,7 @@ float computeTaxable(float income, float deduction){
   	float taxableIncome = income - deduction;
   	if (taxableIncome < 0) {
 	 	return 0.0;
-	} 
+	  } 
   	return taxableIncome;
 }
 //-----------------------------------------------------------------------------------
