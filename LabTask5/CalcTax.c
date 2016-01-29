@@ -135,10 +135,10 @@ float computeTax (char group, float taxable){
 //-----------------------------------------------------------------------------------
 int main(void) {
 
-  float income, deduction, taxable, tax;
-  char group;
+  	float income, deduction, taxable, tax;
+  	char group;
 	
-  // initialize then get income and deduction
+	// initialize then get income and deduction
 	income = deduction = 0.0;
   	IncomeAndDeduction(&income, &deduction);
 
@@ -154,6 +154,6 @@ int main(void) {
 	// display info
 	display(income, deduction, taxable, group, tax);
 	
-  return(EXIT_SUCCESS);
+  	return(EXIT_SUCCESS);
 }
 //----------------------------------------------------------------------------------
