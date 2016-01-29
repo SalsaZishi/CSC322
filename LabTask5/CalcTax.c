@@ -48,13 +48,13 @@ void IncomeAndDeduction(float *income, float *deduction){
 	float nextAmount = 1.0; 
   
 	while (nextAmount != 0.0) {
-    printf("Enter next amount: ");
-	 	scanf("%f", &nextAmount);
-      if (nextAmount > 0) {
-    	  *income += nextAmount;
-    	} else {
-        *deduction += abs(nextAmount);
-    	}
+		printf("Enter next amount: ");
+		scanf("%f", &nextAmount);
+		if (nextAmount > 0) {
+			*income += nextAmount;
+		} else {
+			*deduction += abs(nextAmount);
+		}
   }
 }
 //----------------------------------------------------------------------------------
