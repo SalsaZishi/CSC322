@@ -1,4 +1,4 @@
-Use the Makefile to create an ./svi executable
+<strong>Use the Makefile to create an ./svi executable</strong>
 
 To run ./svi:
 ./svi commands.txt < input.txt
