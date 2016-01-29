@@ -9,6 +9,7 @@ To pipe output of ./svi into a file:
 To compare output with expected output:
 diff myOutput.txt expectedOutput.txt
 
+
 Svi is a stream editor that  modifies input according to a list of edit commands that are given in a file specified as 
 the command line argument. The edited standard input is output to standard output. Each line of input, and output after
 editing, will be maximally 256 characters long.Similar to the sed command found on UNIX machines.
@@ -23,21 +24,26 @@ Three types of line range specifications
 
 There are five edit operations
 
+
 A<text>
     Appends the <text> at the end of the line. For example: Ahello jim appends hello jim to all lines in the file. The <text> can be 
     maximally 80 characters. 
+
 
 I<text>
     Inserts the <text> at the start of the line. For example: /blah/Ineedle noddle noo inserts needle noddle noo at the start of all 
     lines that contain blah. The <text> can be maximally 80 characters. 
 
+
 O<text>
     Inserts the <text> on a new line before the current line. For example: 1,1/OThe Title Inserts a new line before the first line 
     in the file, containing the text The Title. The <text> can be maximally 80 characters. The new line is not put through the 
     editing process. 
+   
     
 d
     Deletes the line from the file. For example: 3,6/d deletes lines 3 to 6 inclusive. 
+
 
 s/<old text>/<new text>/
     Replaces the first occurence of <old text>, in the line, with <new text>. For example: /filename/s/.pas/.c/ replaces the 
