@@ -45,38 +45,38 @@ void display(float income, float deduction, float taxable, char group, float tax
  */
 void IncomeAndDeduction(float *income, float *deduction){
 	
-    float nextAmount = 1; 
-	while (nextAmount != 0.0) {
-		printf("Enter next amount: ");
-        scanf("%f", &nextAmount);
-			if (nextAmount > 0) {
-				*income += nextAmount;
-			} else {
-				*deduction += abs(nextAmount);
-			}
-	}
+  float nextAmount = 1.0; 
+  
+  while (nextAmount != 0.0) {
+    printf("Enter next amount: ");
+    scanf("%f", &nextAmount);
+    if (nextAmount > 0) {
+      *income += nextAmount;
+    } else {
+      *deduction += abs(nextAmount);
+    }
+  }
 }
 //----------------------------------------------------------------------------------
 /* Returns the amount of the taxable income, which equals income minus deduction
  * If taxable income is less than zero, then return 0. Of course, a person who 
- * has negative money (loses money) probably needs government aid, not taxes.
+ * has negative money (loses money) probably needs aid, not taxes.
  */
 float computeTaxable(float income, float deduction){
 	
-	float taxableIncome = income - deduction;
-	if (taxableIncome < 0) {
-		return 0.0;
-	} 
-        return taxableIncome;
+  float taxableIncome = income - deduction;
+  if (taxableIncome < 0) {
+    return 0.0;
+  } 
+  return taxableIncome;
 }
 //-----------------------------------------------------------------------------------
-/* Returns a capital letter that signifies the tax group the user is in, based on 
- * their taxable income.
+/* Returns a capital letter that signifies the tax group the user belongs to,
+ * based on their taxable income.
  */
 char taxGroup (float taxable) {
 	
-	char group;
-	
+char group;
 	if (taxable >= SUPER_RICH) {
 		group = 'S';
 	} else if (taxable >= QUITE_RICH) {
@@ -87,7 +87,7 @@ char taxGroup (float taxable) {
 		group = 'A';
 	} else if (taxable >= REALISTIC) {
 		group = 'R';
-        } else if (taxable < POOR){
+  } else {  // condition is if (taxable < POOR)
 		group = 'P';
 	}		
 	return group;	
@@ -98,23 +98,21 @@ char taxGroup (float taxable) {
  */
 float computeTax (char group, float taxable){
 	
-    float taxRate; 
-    float tax = 0.0;
+  float taxRate; 
+  float tax = 0.0;
 
 	if (group == 'S') {
-		taxRate = SUPER_RICH_RATE;
+    taxRate = SUPER_RICH_RATE;
 	} else if (group == 'Q') {
 		taxRate =  QUITE_RICH_RATE;
-        } else if (group == 'M') {
+  } else if (group == 'M') {
 		taxRate = MIAMI_POOR_RATE;
-        } else if (group == 'A') {
+  } else if (group == 'A') {
 		taxRate = AVERAGE_RATE;
 	} else if (group == 'R') {
 		taxRate = REALISTIC_RATE;
-	} else if (group == 'P') {
+	} else { // condition is (group == 'P') 
 		taxRate = POOR_RATE;
-	} else {
-                printf("Error!");
 	}
 	
 	tax = taxable * taxRate;
@@ -124,7 +122,10 @@ float computeTax (char group, float taxable){
 	return tax;
 }
 //-----------------------------------------------------------------------------------
-void display(float income, float deduction, float taxable, char group, float tax) {
+/* Display the income, deduction, taxable income, tax group, and tax owed properties
+ * of user based on aggregate inputted incomes and deductions
+ */
+ void display(float income, float deduction, float taxable, char group, float tax) {
 	printf("Income         = $%14.2f\n", income);
 	printf("Deduction      = $%14.2f\n", deduction);
 	printf("Taxable Income = $%14.2f\n", taxable);
@@ -132,16 +133,14 @@ void display(float income, float deduction, float taxable, char group, float tax
 	printf("Tax Owed       = $%14.2f\n", tax);
 }
 //-----------------------------------------------------------------------------------
-int main(void){
+int main(void) {
 
-    float income;
-	float deduction;
-    float taxable, tax;
-    char group;
+  float income, deduction, taxable, tax;
+  char group;
 	
-    // get income and deduction
+  // initialize then get income and deduction
 	income = deduction = 0.0;
-    IncomeAndDeduction(&income, &deduction);
+  IncomeAndDeduction(&income, &deduction);
 
 	// get taxable income
 	taxable = computeTaxable(income, deduction);
@@ -155,6 +154,6 @@ int main(void){
 	// display info
 	display(income, deduction, taxable, group, tax);
 	
-    return(EXIT_SUCCESS);
+  return(EXIT_SUCCESS);
 }
 //----------------------------------------------------------------------------------
