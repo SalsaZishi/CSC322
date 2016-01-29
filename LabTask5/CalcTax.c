@@ -87,7 +87,7 @@ char group;
 		group = 'A';
 	} else if (taxable >= REALISTIC) {
 		group = 'R';
-  } else {  // condition is if (taxable < POOR)
+  	} else {  // condition is if (taxable < POOR)
 		group = 'P';
 	}		
 	return group;	
@@ -97,17 +97,17 @@ char group;
  * taxable income. The maximum amount of taxes is capped at $50,000.
  */
 float computeTax (char group, float taxable){
-	
-  float taxRate; 
-  float tax = 0.0;
 
+	float taxRate;
+	float tax = 0.0;
+  
 	if (group == 'S') {
-    taxRate = SUPER_RICH_RATE;
-	} else if (group == 'Q') {
-		taxRate =  QUITE_RICH_RATE;
-  } else if (group == 'M') {
-		taxRate = MIAMI_POOR_RATE;
-  } else if (group == 'A') {
+		taxRate = SUPER_RICH_RATE;
+  	} else if (group == 'Q') {
+    	taxRate =  QUITE_RICH_RATE;
+  	} else if (group == 'M') {
+  		taxRate = MIAMI_POOR_RATE;
+  	} else if (group == 'A') {
 		taxRate = AVERAGE_RATE;
 	} else if (group == 'R') {
 		taxRate = REALISTIC_RATE;
@@ -140,7 +140,7 @@ int main(void) {
 	
   // initialize then get income and deduction
 	income = deduction = 0.0;
-  IncomeAndDeduction(&income, &deduction);
+  	IncomeAndDeduction(&income, &deduction);
 
 	// get taxable income
 	taxable = computeTaxable(income, deduction);
