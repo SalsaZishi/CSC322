@@ -45,17 +45,17 @@ void display(float income, float deduction, float taxable, char group, float tax
  */
 void IncomeAndDeduction(float *income, float *deduction){
 	
-  float nextAmount = 1.0; 
+	float nextAmount = 1.0; 
   
-  while (nextAmount != 0.0) {
-    printf("Enter next amount: ");
-    scanf("%f", &nextAmount);
-    if (nextAmount > 0) {
-      *income += nextAmount;
-    } else {
-      *deduction += abs(nextAmount);
-    }
-  }
+	while (nextAmount != 0.0) {
+    	printf("Enter next amount: ");
+	 	scanf("%f", &nextAmount);
+    	if (nextAmount > 0) {
+      		*income += nextAmount;
+    	} else {
+      		*deduction += abs(nextAmount);
+    	}
+  	}
 }
 //----------------------------------------------------------------------------------
 /* Returns the amount of the taxable income, which equals income minus deduction
@@ -64,11 +64,11 @@ void IncomeAndDeduction(float *income, float *deduction){
  */
 float computeTaxable(float income, float deduction){
 	
-  float taxableIncome = income - deduction;
-  if (taxableIncome < 0) {
-    return 0.0;
-  } 
-  return taxableIncome;
+  	float taxableIncome = income - deduction;
+  	if (taxableIncome < 0) {
+	 	return 0.0;
+	} 
+  	return taxableIncome;
 }
 //-----------------------------------------------------------------------------------
 /* Returns a capital letter that signifies the tax group the user belongs to,
