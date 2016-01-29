@@ -12,7 +12,7 @@
  * which is also located in the LabTask 7 folder. Compile your program
  * into an executable. Then redirect the test.txt file as input to the 
  * executable like so:
- * 			./executable < test.txt
+ * 			./ExtractComments < test.txt
  * 
  * This program was quite difficult and took 10 hours, so good luck!
  */ 
